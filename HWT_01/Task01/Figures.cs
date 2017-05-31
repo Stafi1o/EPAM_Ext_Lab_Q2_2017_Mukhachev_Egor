@@ -10,18 +10,6 @@
 
 namespace Task01
 {
-    struct DPoint
-    {
-        public double X;
-        public double Y;
-
-        public DPoint(double x, double y)
-        {
-            X = x;
-            Y = y;
-        }
-    }
-
     static class Figures
     {
         public static bool InCircle(DPoint point, DPoint center, double radius, bool withBorder = true)
@@ -49,6 +37,18 @@ namespace Task01
             return withBorder
                 ? a >= 0 && b >= 0 && c >= 0 || a <= 0 && b <= 0 && c <= 0
                 : a > 0 && b > 0 && c > 0 || a < 0 && b < 0 && c < 0;
+        }
+    }
+
+    struct DPoint
+    {
+        public double X;
+        public double Y;
+
+        public DPoint(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
         }
     }
 }

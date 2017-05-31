@@ -36,7 +36,7 @@ namespace Task01
                 {
                     Console.Write("Введите координаты (X, Y) точки через пробел: ");
                     var readLine = Console.ReadLine();
-                    var input = readLine?.Replace('.', ',').Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                    var input = readLine?.Replace('.', ',').Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     if (input?.Length == 2 && double.TryParse(input[0], out x) && double.TryParse(input[1], out y))
                     {
                         break;

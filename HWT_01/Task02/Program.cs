@@ -1,7 +1,7 @@
 ﻿using System;
 
 /*
-    Дано действительно число h. 
+    Дано действительно число h.
     Выяснить имеет ли уравнение ax^2+bx+c=0 действительные корни.
 */
 
@@ -11,7 +11,7 @@ namespace Task02
     {
         private static double[] QuadraticEquation(double a, double b, double c, out double discr)
         {
-            discr = b * b - 4 * a * c; 
+            discr = b * b - 4 * a * c;
             if (a.Equals(0.0))
             {
                 return new[] { -c / b};
@@ -24,10 +24,10 @@ namespace Task02
 
             if (discr.Equals(0.0))
             {
-                return new[] { -b / (2 * a)};
+                return new[] { -b / (2 * a) };
             }
 
-            return new[] { (Math.Sqrt(discr) - b) / (2 * a), (-Math.Sqrt(discr) - b) / (2 * a)};
+            return new[] { (Math.Sqrt(discr) - b) / (2 * a), (-Math.Sqrt(discr) - b) / (2 * a) };
         }
 
         static void Main(string[] args)
@@ -42,7 +42,7 @@ namespace Task02
                 while (true)
                 {
                     var readLine = Console.ReadLine();
-                    if (readLine != null && double.TryParse(readLine.Replace('.',','), out h))
+                    if (readLine != null && double.TryParse(readLine.Replace('.', ','), out h))
                     {
                         break;
                     }
@@ -56,6 +56,7 @@ namespace Task02
                     Console.WriteLine("Деление на 0 в выражении [а]");
                     continue;
                 }
+
                 a = Math.Sqrt((Math.Abs(Math.Sin(8 * h)) + 17) / Math.Pow(a, 2));
 
                 var b = 1 - Math.Sqrt(3 / (3 + Math.Abs(Math.Tan(a * h * h) - Math.Sin(a * h))));
