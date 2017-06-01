@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 /*
     Дано действительно число h.
@@ -32,7 +33,10 @@ namespace Task02
 
         static void Main(string[] args)
         {
-            var repeat = "Y";
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			var repeat = "Y";
             do
             {
                 Console.Clear();

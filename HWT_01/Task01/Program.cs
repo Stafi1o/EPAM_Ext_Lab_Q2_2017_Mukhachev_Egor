@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 /*
     Написать консольное приложение, которое проверяет
@@ -14,7 +15,10 @@ namespace Task01
     {
         static void Main(string[] args)
         {
-            string repeat;
+	        Console.InputEncoding = Encoding.Unicode;//todo pn без явного задания кодировки будет использована кодировка по умолчанию. Машина, на которой я проверяю настроена на английскую культуру, поэтому кириллические символы отображаются в ней как знаки вопроса. Следует учитывать такое специфичное поведение консоли в следующих заданиях :)/
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			string repeat;
             do
             {
                 Console.Clear();
