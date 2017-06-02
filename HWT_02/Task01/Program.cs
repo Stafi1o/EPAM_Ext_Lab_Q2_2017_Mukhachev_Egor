@@ -1,6 +1,13 @@
 ﻿using System;
 using System.Text;
 
+/*
+    Написать программу, которая определяет площадь прямоугольника со
+    сторонами a и b. Если пользователь вводит некорректные значения
+    (отрицательные, или 0), должно выдаваться сообщение об ошибке.
+    Возможность ввода пользователем строки вида «абвгд», или нецелых
+    чисел игнорировать. */
+
 namespace Task01
 {
     class Program
@@ -21,17 +28,18 @@ namespace Task01
                     Console.Write("Введите стороны прямоугольника (а,b) через пробел: ");
                     var readLine = Console.ReadLine();
                     var input = readLine?.Replace('.', ',').Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                    if (input?.Length == 2 && int.TryParse(input[0], out a) && int.TryParse(input[1], out b))
+
+                    if (input?.Length != 2 || !int.TryParse(input[0], out a) || !int.TryParse(input[1], out b)) continue;
+
+                    if (a <= 0 || b <= 0)
                     {
-                        if (a <= 0 || b <= 0)
-                        {
-                            Console.WriteLine("Стороны не могут быть меньше или равны 0. Введите еще раз");
-                            continue;
-                        }
-                        break;
+                        Console.Write("Стороны должны быть больше 0. Введите еще раз!");
+                        Console.ReadKey();
+                        continue;
                     }
 
-                    Console.WriteLine("Неправильный ввод. Введите еще раз");
+                    break;
+
                 } while (true);
 
                 Console.WriteLine($"Площадь прямоугольника по введенным сторонам [{a},{b}] равна: {a * b}");
